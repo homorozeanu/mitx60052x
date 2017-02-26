@@ -1,7 +1,7 @@
 public class Main {
 
     public static void main(String[] args) {
-        System.out.println(stringValue(857, 10));
+        System.out.println(stringValue(0, 10));
     }
 
     /**
@@ -14,8 +14,8 @@ public class Main {
      */
     public static String stringValue(int n, int base) {
         if (n < 0) return stringValue(-n, base);
-        if (n == 0) {
-            return "";
+        if (n < base) {
+            return "" + n;
         } else {
             return stringValue(n / base, base) + "0123456789".charAt(n % base);
         }
